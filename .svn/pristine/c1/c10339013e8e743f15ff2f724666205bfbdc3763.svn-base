@@ -1,0 +1,52 @@
+package api.stonedt.com.entity;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import api.stonedt.com.entity.HospitalInfo;
+import api.stonedt.com.entity.Sentiment;
+import api.stonedt.com.service.HospitalInfoService;
+import api.stonedt.com.service.SentimentService;
+
+
+@Controller
+@RequestMapping("/Sentiment")
+public class NewsController {
+	@Autowired
+	private SentimentService sentimentService ;
+	
+	//获取医院列表list
+	@RequestMapping(value="/getSentiment",produces = "text/plain;charset=utf-8")
+	public ModelAndView getHospitalAll(ModelAndView mv,HttpServletResponse response,HttpServletRequest request){
+		List<Sentiment> list=sentimentService.getSentiment();
+		mv.getModel().put("sentimentlist", list);
+		
+		mv.setViewName("sentiment");
+		return mv;
+	}
+	
+	@RequestMapping(value="/getOneSentiment",produces = "text/plain;charset=utf-8")
+	public ModelAndView getOneSentiment(ModelAndView mv,HttpServletResponse response,HttpServletRequest request){
+		Sentiment sentiment=new Sentiment();
+		String idNum=request.getParameter("id");
+		int id=Integer.parseInt(idNum);
+		sentiment.setId(id);
+		Sentiment s=sentimentService.getOneSentiment(sentiment);
+		mv.getModel().put("sentimentone", s);
+		
+		mv.setViewName("sentimentdetails");
+		return mv;
+	}
+
+	
+	
+
+}

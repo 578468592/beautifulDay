@@ -1,0 +1,392 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+<title>沧州市中心医院</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.min.css">
+<!-- Custom Css -->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/main.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/blog.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/color_skins.css">
+</head>
+<body class="theme-cyan">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="${pageContext.request.contextPath }/${hospital.logo}" width="48" height="48" alt="Compass"></div>
+        <p>正在加载数据,请稍后</p>
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Top Bar -->
+<div id = "top"></div>
+
+<!-- Left Sidebar -->
+
+<div id = "left"></div>
+
+<!-- Right Sidebar -->
+
+<!-- Main Content -->
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>领导关注
+                <!--<small class="text-muted">Welcome to Compass</small>-->
+                </h2>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-fluid">       
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-12">
+         
+                  <c:forEach items="${list1}" var="list">
+                <div class="card member-card">
+                    <div class="header l-cyan">
+						<h4 class="m-t-10">${list.doctorname}</h4>
+                        <h4 class="m-t-10">${list.positionaltitles}</h4>
+                    </div>
+                    
+                   <!-- <div class="member-img">
+                        <a href="profile.html" class="">
+                        <img src="assets/images/profile_av.jpg" class="rounded-circle" alt="profile-image">
+                        </a>
+                    </div>-->
+                    <div class="body">
+                        <div class="col-12">
+                            <!--<ul class="social-links list-unstyled">
+                                <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+                            </ul>-->
+                            <p class="text-muted">${list.doctorintroduction}</p>
+                        </c:forEach>
+                        </div>
+                        <hr>
+                        <!-- div class="row">
+                            <div class="col-4">
+                                <h5>2</h5>
+                                <small>网络相关</small>
+                            </div>
+                            <div class="col-4">
+                                <h5>2</h5>
+                                <small>学术相关</small>
+                            </div>
+                                                      
+                        </div> -->
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="card">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item" ><a id="one" class="nav-link"  href="${pageContext.request.contextPath }/Doctorinfo/queryleader?page=1&type=1&id=${doctorid}">网络相关</a></li>
+<!--                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#timeline">获奖</a></li>
+-->                        <li class="nav-item" ><a id="two" class="nav-link"  href="${pageContext.request.contextPath }/Doctorinfo/queryleader?page=1&type=2&id=${doctorid}">学术著作</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                <c:forEach items="${list}" var="list">
+                    <div role="tabpanel" class="tab-pane blog-page active" id="mypost">
+                        <div class="card single_post">
+                            <div class="body">
+                                <h3 class="m-t-0 m-b-5"><a href="${list.weburl}">${list.title}</a></h3>
+                                <ul class="meta">
+                                    <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>${list.originweb}</a></li>
+                                    <li><a href="#" style="font-size: smaller;"><i class="zmdi zmdi-label col-red"></i>${list.date}</a></li>
+                                   <!--  <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>6821</a></li> -->
+                                </ul>
+                            </div>                    
+                            <div class="body">
+                                <div class="img-post m-b-15">
+                                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner" role="listbox">
+                                            <div class="carousel-item active">
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                    <!--<div class="social_share">                            
+                                        <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-facebook"></i></button>
+                                        <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-twitter"></i></button>
+                                        <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-instagram"></i></button>
+                                    </div>-->
+                                </div>
+                                <p>${list.abstractcontent }</p>
+                                <a href="${list.weburl}" target="_blank" title="read more" class="btn btn-round btn-info">来源</a>
+                                     <c:if test="${list.flag==0}">
+									  <button type="button" style="padding: 4px 8px;color:red; background-color:white;" class="btn btn-default" onclick="shoucang(${list.id})">收藏</button>
+									 </c:if>
+									 <c:if test="${list.flag>0}">
+									     已收藏
+									 </c:if>                     
+                            </div>
+                        </div>
+                       </c:forEach>
+                       <!-- <div class="card single_post">
+                            <div class="body">
+                                <h3 class="m-t-0 m-b-5"><a href="#">温秀玲代表提建议 刘延东赞其说到了“要害”_河北频道_凤凰网</a></h3>
+                                <ul class="meta">
+                                    <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>凤凰网</a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-label col-red"></i>2017年03月01日 10:38</a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>61</a></li>
+                                </ul>
+                            </div>                    
+                            <div class="body">
+                                <div class="img-post m-b-15">
+                                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner" role="listbox">
+                                            <div class="carousel-item active">
+                                                <img class="d-block img-fluid" src="http://yyimage.zhongsou.com/gctv/1806/22/15362389859085.jpg" style="width:30%;height:20%">
+                                            </div>
+                                            
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                    <div class="social_share">                            
+                                        <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-facebook"></i></button>
+                                        <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-twitter"></i></button>
+                                        <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-instagram"></i></button>
+                                    </div>
+                                </div>
+                                <p>温秀玲认为,以往说药价高,今后医院实行零加价,那么中间到底哪个环节加价就应该公开曝光出来。” 药价的问题不小,刘延东对温秀玲说,你有40多年的经验</p>
+                                <a href="http://hebei.ifeng.com/a/20170306/5436547_0.shtml" target="_blank" title="read more" class="btn btn-round btn-info">原文</a>                        
+                            </div>
+                        </div> -->
+                       
+                       
+                       
+                       
+                        <!--<ul class="pagination pagination-primary">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>   -->             
+                    </div>
+                    
+                    <div class="btn-group" style="padding: 15px; width: 100%;" >
+			
+				<c:if test="${totalPage < 1}">
+					<img style="margin-left: 90px;width:200px;" alt="" src="${pageContext.request.contextPath}/static/img/dataemty.png">
+				</c:if>
+				<c:if test="${totalPage >= 1}">
+					<button type="button" class="btn btn-default" onclick="goPage(1)">首页</button>
+
+					<button type="button" class="btn btn-default active" id="pages"></button>
+
+
+					<button type="button" class="btn btn-default"
+						onclick="goPage(${totalPage})">末页</button>
+					<font style="line-height: 34px"> &nbsp;&nbsp;共${totalPage}页
+					</font>
+					<font style="line-height: 34px; margin-left: 30px">
+						到&nbsp;&nbsp;<input type="number" id="jumpPage"
+						style="width: 100px; height: 34px" max="${totalPage}" min="1" />
+						页 &nbsp;&nbsp;&nbsp;&nbsp;
+					</font>
+					<button type="button" class="btn btn-default" onclick="jumpPage()"
+						style="float: none;">确定</button>
+
+				</c:if>
+			</div>
+
+       </div>
+                    
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Jquery Core Js --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/morrisscripts.bundle.js"></script><!-- Morris Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/knob.bundle.js"></script> <!-- Jquery Knob Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/countTo.bundle.js"></script> <!-- Jquery CountTo Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/mainscripts.bundle.js"></script>
+</body>
+<script type="text/javascript">
+
+var type = '${type}';
+if(type==1){
+	$("#one").attr("class","nav-link active");
+}else if(type==2){
+	$("#two").attr("class","nav-link active");
+}else if(type==3){
+	$("#ylfw").attr("class","nav-link active");
+}else if(type==4){
+	$("#yxyj").attr("class","nav-link active");
+}
+var pageNum = '${page}'
+	$("#pages").html(pageNum);
+
+	var allPage = '${totalPage}';
+	var pageNum = '${page}';
+	if("0" == allPage || 0 == allPage ){
+		
+		var nullHtml = "";
+		nullHtml +=	'<img style="margin-left: 90px;width:200px;" alt="" src="${pageContext.request.contextPath}/static/img/dataemty.png">';
+		
+
+		$("#pageButton").html(nullHtml);
+	}
+	var htmlxx = "";
+	for(var xx = 1;xx < 3;xx++){
+		
+		var upPage =  parseInt(pageNum) - 3 + parseInt(xx);
+		
+		
+		if(upPage > 0){
+			htmlxx += '<button type="button" class="btn btn-default" onclick="goPage(' + upPage + ')">' + upPage + '</button>';
+		}
+	}
+
+	$("#pages").before(htmlxx);
+
+	htmlxx = "";
+	for(var xx = 1;xx < 3;xx++){
+		
+		var upPage =  parseInt(pageNum) + parseInt(xx);
+		
+		if(upPage <= allPage){
+			htmlxx += '<button type="button" class="btn btn-default" onclick="goPage(' + upPage + ')">' + upPage + '</button>';
+		}
+	}
+
+	$("#pages").after(htmlxx);
+
+	function goPage(page){
+		//zeroModal.loading(1);
+		location.href="${pageContext.request.contextPath }/Doctorinfo/queryleader?page="+page+"&type="+type+"&id="+${doctorid};
+	}
+
+	function upPage(){
+		if(pageNum <= 1){
+			aletMassage("已在首页","error");
+			return;					
+		}	
+		goPage(pageNum - 1);
+	}
+	function nextPage(){
+		if(pageNum >= totalPage){
+			aletMassage("已在尾页","error");
+			return;					
+		}	
+		goPage(pageNum + 1);
+	}
+
+	/* 
+	function toDetail(id){
+
+	$("#hide").css.style="block";
+	} */
+
+
+	function jumpPage(){
+	var jumpPage = $("#jumpPage").val();
+	/* if(jumpPage>=500){
+	jumpPage = 500;
+	} */
+
+
+	var allPage = '${totalPage}';
+
+
+	var re = /^[1-9]\d*$/;
+
+	if (!re.test(jumpPage)) {
+	aletMassage("请输入正整数",'error');
+	return;
+	}
+	if(jumpPage < 1 || parseInt(jumpPage) > parseInt(allPage)){
+		alert("大于总页数")
+		　//aletMassage("数字不合法！",'error');
+	　　　　return;
+	}
+
+
+	 goPage(jumpPage);
+
+	}
+
+	function shoucang(id){
+		 var data= {id:id};
+		 $.ajax({
+	            type:"POST",
+		        url:"${pageContext.request.contextPath}/intelligence/collection",
+	            data:data,
+				dataType:'json',
+					success:function(data){
+						var resultdata = JSON.parse(data);
+						console.info(typeof(resultdata));
+	      		if(resultdata.code=='1'){
+	          	     window.location.reload(); 
+	          	     
+	     }else if(resultdata.code=='-1'){
+	         	alert("收藏失败");
+	    }
+	}
+	});
+		
+		
+	}
+
+
+
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#left').load('${pageContext.request.contextPath }/left');
+		$('#top').load('${pageContext.request.contextPath }/top');
+	});
+
+	setTimeout(function () {
+		$(document).ready(function () {
+			$("#feeling").attr("class","open active");
+			$("#doctors").attr("class","open active");
+	});
+	},100);
+	
+</script>
+</html>

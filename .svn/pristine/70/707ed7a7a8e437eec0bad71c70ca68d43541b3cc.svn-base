@@ -1,0 +1,23 @@
+package api.stonedt.com.serviceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import api.stonedt.com.dao.CollectionDao;
+import api.stonedt.com.service.CollectionService;
+
+public class CollectionServiceImpl implements CollectionService {
+
+		@Autowired
+		private CollectionDao collectionDao;
+
+		
+
+
+
+	
+	
+	
+	
+	
+	
+}

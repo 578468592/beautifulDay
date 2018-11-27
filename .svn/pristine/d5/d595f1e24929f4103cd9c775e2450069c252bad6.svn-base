@@ -1,0 +1,185 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+<title>沧州市中心医院</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.min.css">
+<!-- Custom Css -->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/main.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/blog.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/color_skins.css">
+</head>
+<body class="theme-cyan">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="${pageContext.request.contextPath }/assets/photos/czzxyy.jpeg" width="48" height="48" alt="Compass"></div>
+        <p>正在加载数据,请稍后</p>
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Top Bar -->
+<div id = "top"></div>
+
+<!-- Left Sidebar -->
+
+<div id = "left"></div>
+
+<!-- Right Sidebar -->
+
+<!-- Main Content -->
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>沧州人民医院</h2>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-fluid">       
+            <div class="row clearfix">
+                
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dxgz">相关新闻</a></li>
+														<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ffcl">网络评论</a></li>
+                            <!--<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ylfw">判决书</a></li>-->
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane blog-page active" id="dxgz">
+                        	<div class="card single_post">
+                            		<div class="body">
+                            				<h6 class="m-t-0"><a href="http://www.dzwww.com/xinwen/shehuixinwen/201806/t20180614_17487083.htm" target="_blank" style=" font-size: large; ">“幸福呼吸”中国慢阻肺分级诊疗推广沧州示范区项目启动</a></h6>
+                            				<p style=" font-size: smaller; ">来源：<a href="http://www.dzwww.com/xinwen/shehuixinwen/201806/t20180614_17487083.htm">大众网</a> 时间：<a href="#">2018年06月14日 01:22<a></p>
+                            				<p>“幸福呼吸”中国慢阻肺分级诊疗推广沧州示范区项目启动大会今天召开。沧州成为该项目全国8个重点示范区之一,沧州市人民医院成为...</p>
+                            				<div class="row">
+                            						
+                            				</div>
+                            		</div>
+                            </div>
+                        	<div class="card single_post">
+                            		<div class="body">
+                            				<h6 class="m-t-0"><a href="http://china.cnr.cn/ygxw/20180613/t20180613_524269452.shtml" target="_blank" style=" font-size: large; ">“幸福呼吸”中国慢阻肺分级诊疗推广项目在河北沧州启动</a></h6>
+                            				<p style=" font-size: smaller; ">来源：<a href="http://china.cnr.cn/ygxw/20180613/t20180613_524269452.shtml">中国广播网</a> 时间：<a href="#">2018年06月13日 20:22<a></p>
+                            				<p>作为试点之一,沧州市人民医院在今后的工作中,将在国家呼吸研究中心指导下不断组织开展慢阻肺分级诊疗临床诊治规范化培训,提升医生慢阻肺疾病诊治水平;在各级医疗机构...</p>
+                            				<div class="row">
+                            						
+                            				</div>
+                            		</div>
+                            </div>
+                            <div class="card single_post">
+                            		<div class="body">
+                            				<h6 class="m-t-0"><a href="http://yglz.tousu.hebnews.cn/H5/msgshow.aspx?m=116292" target="_blank" style=" font-size: large; ">沧州市人民医院路口由南向北指示牌与地面标线不符</a></h6>
+                            				<p style=" font-size: smaller; ">来源：<a href="http://yglz.tousu.hebnews.cn/H5/msgshow.aspx?m=116292">河北新闻网</a> 时间：<a href="#">2018年06月13日 09:36<a></p>
+                            				<p>办理跟踪信息 2018-06-13 09:36留言已转到沧州市公安局,等待部门受理。我要评论 7人查看 共0条评论 我要发评论特别声明 本文仅代表网民作者个人观点,不...</p>
+                            				<div class="row">
+                            						
+                            				</div>
+                            		</div>
+                            </div>
+                            
+                            
+                                
+                              
+                        </div>
+                        <div role="tabpanel" class="tab-pane blog-page" id="ffcl">
+                            <div class="card single_post">                    
+                        <div class="body">
+                        <ul class="inbox-widget list-unstyled clearfix">
+                        	
+                        		<li class="inbox-inner"> <a href="javascript:void(0)">
+                                <div class="inbox-item">
+                                    <div class="inbox-img"> <img src="${pageContext.request.contextPath }/assets/images/avatar1.jpg" alt=""> </div>
+                                    <div class="inbox-item-info">
+                                        <p class="author">视鸽如子haha</p>
+                                        <p class="inbox-message">太坑人了，阑尾炎手术在手术中算是最小的手术了，太坑。5000还行。</p>
+                                        <p class="inbox-date">2017-08-19 10:50<span class="nonameed" style=" margin-left: 10px; ">来源:</span><a href="http://tieba.baidu.com/p/5277298901" target="_blank">贴吧</a></p>
+                                    </div>
+                                </div></a>
+							</li>
+							<li class="inbox-inner"> <a href="javascript:void(0)">
+                                <div class="inbox-item">
+                                    <div class="inbox-img"> <img src="${pageContext.request.contextPath }/assets/images/avatar1.jpg" alt=""> </div>
+                                    <div class="inbox-item-info">
+                                        <p class="author">傲视群雄317</p>
+                                        <p class="inbox-message">一万五？？就在普通病房，只做了个简单的阑尾？就花了 15000.我觉得有些多呢</p>
+                                        <p class="inbox-date">2017-08-19 06:46<span class="nonameed" style=" margin-left: 10px; ">来源:</span><a href="http://tieba.baidu.com/p/5277298901" target="_blank">贴吧</a></p>
+                                    </div>
+                                </div></a>
+							</li>
+                        	
+                        </ul>
+                        </div>
+                        <!--<div role="tabpanel" class="tab-pane blog-page" id="ylfw">
+                           <div class="card single_post">
+                           		<div class="body">
+                           				<h6 class="m-t-0"><a href="news_detail_1.html" target="_blank" style=" font-size: large; ">私自用药致人死亡 无证医生害人害己</a></h6>
+                           				<p style=" font-size: smaller; ">来源：<a href="www.jsw.com.cn/2018/0328/1442376.shtml">中国镇江金山网 国家一类新闻网站 </a> 时间：<a href="#">2018-02-02 21:22<a></p>
+                           				<p>金山网讯 去年，53岁的王师傅因为在谏壁的一家小诊所看病，却最终不治。日前，京口区人民法院受理了这起非法行医的公诉案件。</p>
+                           				<div class="row">
+                           						
+                           				</div>
+                           		</div>
+                           </div>
+                           <div class="card single_post">
+                           		<div class="body">
+                           				<h6 class="m-t-0"><a href="javascript:void(0);">河北邯郸武安市第一人民医院院长郝保乾高调奢华嫁女获利百万…</a></h6>
+                           				<p>据知情人透露，2012年春节假期过后，经郝保乾指示，医院领导们上班后第一件事，不是研究医院工作，而是开会研究郝保乾女儿婚嫁的事宜。他们在医院中层干部周例会上研究讨论通过：医院职工要全力以赴准备院长女儿的婚礼，保证婚礼的高调奢华，强制要求本院至少要有百分之五十以上的职工参加郝保乾女儿的婚礼现场，郝保乾通过女儿的婚嫁大肆收取高额礼金，收入达近百万元，酒席一百多桌。</p>
+                           				<ul class="meta">
+                           						
+                           				</ul>
+                           				<div class="row">
+                           						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"><img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                           						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                           						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"> </a> </div>
+                           				</div>
+                           		</div>
+                           </div>
+                        </div>-->
+												
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- Jquery Core Js --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/morrisscripts.bundle.js"></script><!-- Morris Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/knob.bundle.js"></script> <!-- Jquery Knob Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/countTo.bundle.js"></script> <!-- Jquery CountTo Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/mainscripts.bundle.js"></script>
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#left').load('${pageContext.request.contextPath }/left');
+		$('#top').load('${pageContext.request.contextPath }/top');
+	});
+
+	setTimeout(function () {
+		$(document).ready(function () {
+			$("#focus").attr("class","open active");
+	});
+	},100);
+	
+</script>
+</html>

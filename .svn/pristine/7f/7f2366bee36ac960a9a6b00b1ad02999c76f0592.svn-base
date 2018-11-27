@@ -1,0 +1,8 @@
+package api.stonedt.com.dao;
+
+import api.stonedt.com.entity.UserEntity;
+
+public interface UserDao {
+	UserEntity conUserLogin(UserEntity user);
+
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="api.stonedt.com.dao.OtherHospitalDao"> 
+<select id="getcount" resultType="int" parameterType="api.stonedt.com.entity.OtherHospital">
+   select count(1) from otherhospital where hospitalid =#{hospitalid}
+</select>
+<select id="getList" parameterType="map" resultType="api.stonedt.com.entity.OtherHospital">
+    select * from otherhospital where hospitalid =#{hospitalid} limit #{start},10
+</select>
+
+<select id="getnewscount" parameterType="map" resultType="int">
+   select count(1) from hospitalnews where hospitalid =#{hospitalid} and comment = #{comment} and otherhospitalid = #{otherhospitalid} 
+</select>
+<select id="getOthernewsList" parameterType="map" resultType="map">
+       SELECT
+	    ho.*,IFNULL(co.id,0) AS flag
+      FROM
+	   hospitalnews ho
+      LEFT JOIN collection co ON (
+	    ho.id = co.newsid
+	    AND co.userid = #{userid}
+) WHERE 1=1
+	    AND ho.hospitalid = #{hospitalid}
+	    AND ho.comment =#{comment}
+	    AND ho.otherhospitalid = #{otherhospitalid}
+ORDER BY ho.date desc
+LIMIT #{start},10
+   
+   
+   
+   
+   
+   
+
+</select>
+
+
+
+
+
+
+
+
+</mapper> 

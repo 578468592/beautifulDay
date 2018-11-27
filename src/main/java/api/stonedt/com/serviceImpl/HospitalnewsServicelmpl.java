@@ -1,0 +1,49 @@
+package api.stonedt.com.serviceImpl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import api.stonedt.com.dao.HospitalnewsDao;
+import api.stonedt.com.entity.Hospitalnews;
+import api.stonedt.com.service.HospitalnewsService;
+
+@Service("HospitalnewsService")
+public class HospitalnewsServicelmpl implements HospitalnewsService {
+
+	@Autowired
+	private HospitalnewsDao HospitalnewsDao;
+	//获取所有评论姓名count
+
+	@Override
+	public int getallidentification(Hospitalnews Hospitalnews) {
+		// TODO Auto-generated method stub
+	
+		return HospitalnewsDao.getallidentification(Hospitalnews);
+	}
+
+	@Override
+	public List<Map<String, Object>> getallcomment(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return HospitalnewsDao.getallcomment(map);
+	}
+
+	@Override
+	public int getalltitle(Hospitalnews Hospitalnews) {
+		// TODO Auto-generated method stub
+	  
+		return HospitalnewsDao.getalltitle(Hospitalnews);
+	}
+
+	@Override
+	public List<Map<String, Object>> getallyuqing(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return HospitalnewsDao.getallyuqing(map);
+	}
+
+	
+	
+
+}

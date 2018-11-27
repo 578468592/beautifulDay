@@ -1,0 +1,154 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+<title>沧州市中心医院</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.min.css">
+<!-- Custom Css -->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/main.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/blog.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/color_skins.css">
+</head>
+<body class="theme-cyan">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="${pageContext.request.contextPath }/assets/photos/czzxyy.jpeg" width="48" height="48" alt="Compass"></div>
+        <p>正在加载数据,请稍后</p>
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Top Bar -->
+<div id = "top"></div>
+
+<!-- Left Sidebar -->
+
+<div id = "left"></div>
+
+<!-- Right Sidebar -->
+
+<!-- Main Content -->
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>其他医院
+                <!--<small class="text-muted">Welcome to Compass</small>-->
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+        	
+        	
+        	
+        	<div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card xl-blue member-card doctor">
+                    <div class="body">
+                        <div class="member-thumb">
+                            <img src="${pageContext.request.contextPath }/images/cangzhou.jpg" class="rounded-circle img-fluid img-thumbnail" alt="profile-image">                               
+                        </div>
+                        <div class="detail">
+                            <h4 class="m-b-0">沧州人民医院</h4>
+                            <p class="text-muted">三甲</p>
+                            <ul class="social-links list-inline m-t-20">
+                                <li><a title="desktop-mac" href="http://www.czrmyy.com/" target="_blank"><i class="zmdi zmdi-desktop-mac"></i>官网</a></li>
+                                <li><a title="twitter" href="https://weibo.com/u/6171415199?refer_flag=1001030101_"  target="_blank"><i class="zmdi zmdi-twitter"></i>微博</a></li>
+                                <!--<li><a title="instagram" href="javascript:void(0);"  target="_blank"><i class="zmdi zmdi-instagram"></i>公众号</a></li>-->
+                            </ul>
+                            <!--<p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p> -->                          
+                            <a href="other_czrmyy.html" class="btn btn-default btn-round btn-simple">查看</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card xl-blue member-card doctor">
+                    <div class="body">
+                        <div class="member-thumb">
+                            <img src="${pageContext.request.contextPath }/images/gulou.gif" class="rounded-circle img-fluid img-thumbnail" alt="profile-image">                               
+                        </div>
+                        <div class="detail">
+                            <h4 class="m-b-0">南京鼓楼医院</h4>
+                            <p class="text-muted">三甲</p>
+                            <ul class="social-links list-inline m-t-20">
+                                <li><a title="desktop-mac" href="http://www.njglyy.com/" target="_blank"><i class="zmdi zmdi-desktop-mac"></i>官网</a></li>
+                                <li><a title="twitter" href="https://weibo.com/u/3226141864?refer_flag=1001030201_&is_hot=1"  target="_blank"><i class="zmdi zmdi-twitter"></i>微博</a></li>
+                                <!--<li><a title="instagram" href="javascript:void(0);"  target="_blank"><i class="zmdi zmdi-instagram"></i>公众号</a></li>-->
+                            </ul>
+                            <!--<p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p> -->                          
+                            <a href="other_glyy.html" class="btn btn-default btn-round btn-simple">查看</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<!--<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="card xl-blue member-card doctor">
+					<div class="body">
+						<div class="member-thumb">
+							<img src="1.jpg" class="rounded-circle img-fluid img-thumbnail" alt="profile-image">                               
+						</div>
+						<div class="detail">
+							<h4 class="m-b-0">湘雅医院</h4>
+							<p class="text-muted">三甲</p>
+							<ul class="social-links list-inline m-t-20">
+								<li><a title="desktop-mac" href="http://www.xiangya.com.cn/web/" target="_blank"><i class="zmdi zmdi-desktop-mac"></i>官网</a></li>
+								<li><a title="twitter" href="https://weibo.com/csuxiangya?refer_flag=1001030101_"  target="_blank"><i class="zmdi zmdi-twitter"></i>微博</a></li>
+								<!--<li><a title="instagram" href="javascript:void(0);"  target="_blank"><i class="zmdi zmdi-instagram"></i>公众号</a></li>
+							</ul>
+							<p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>                       
+							<a href="other_xt.html" class="btn btn-default btn-round btn-simple">查看</a>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			
+			
+			
+			
+			
+            
+        </div>        
+    </div>
+</section>
+<!-- Jquery Core Js --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/morrisscripts.bundle.js"></script><!-- Morris Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/knob.bundle.js"></script> <!-- Jquery Knob Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/countTo.bundle.js"></script> <!-- Jquery CountTo Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/mainscripts.bundle.js"></script>
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#left').load('${pageContext.request.contextPath }/left');
+		$('#top').load('${pageContext.request.contextPath }/top');
+	});
+
+	setTimeout(function () {
+		$(document).ready(function () {
+			$("#focus").attr("class","open active");
+	});
+	},100);
+	
+</script>
+</html>
+
+

@@ -1,0 +1,126 @@
+package api.stonedt.com.controller;
+
+import java.text.ParseException;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import api.stonedt.com.dao.CollectionDao;
+import api.stonedt.com.entity.Collection;
+import api.stonedt.com.entity.FrontierTechnology;
+import api.stonedt.com.entity.HospitalDemeanor;
+import api.stonedt.com.entity.HospitalInfo;
+import api.stonedt.com.entity.NewsEntity;
+import api.stonedt.com.entity.OtherHospital;
+import api.stonedt.com.entity.UserEntity;
+import api.stonedt.com.service.FrontierTechnologyService;
+import api.stonedt.com.service.HospitalDemeanorService;
+import api.stonedt.com.service.NewsService;
+import api.stonedt.com.service.OtherHospitalService;
+
+/**
+ * 其他医院
+ * @author wangyi
+ *
+ */
+@Controller
+@RequestMapping("/otherhospital")
+public class OtherHospitalController {
+	@Autowired
+	private OtherHospitalService otherHospitalService;
+    /**
+     *  其他医院列表
+     * @param request
+     * @return
+     * @throws ParseException
+     */
+	@RequestMapping("/list")
+	public ModelAndView list(HttpServletRequest request,ModelAndView mv) throws ParseException {
+		UserEntity  user = (UserEntity)request.getSession().getAttribute("User");
+		HospitalInfo  hospital = (HospitalInfo)request.getSession().getAttribute("hospital");
+		Integer page = Integer.parseInt(request.getParameter("page").toString());
+		OtherHospital other = new OtherHospital();
+		other.setHospitalid(hospital.getId());
+		int count = otherHospitalService.getcount(other); //得到数量
+		int totalpage = 0;
+		if(count%10==0){
+			totalpage = count/10;
+		}else{
+			totalpage = count/10+1;
+		}
+		if(page>=totalpage){
+			totalpage = page;
+		}
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("start", (page-1)*10);
+		map.put("hospitalid", hospital.getId());
+		List<OtherHospital> list = otherHospitalService.getList(map);
+		mv.addObject("list", list);
+		mv.addObject("count",count);
+		mv.addObject("totalPage", totalpage);
+		mv.addObject("page", page);
+		mv.setViewName("focus");
+		return mv;
+	}
+	
+	/**
+     *  其他医院详情信息列表
+     * @param request
+     * @return
+     * @throws ParseException
+     */
+	@RequestMapping("/detaillist")
+	public ModelAndView otherhospitallist(HttpServletRequest request,ModelAndView mv) throws ParseException {
+		NewsEntity news = new NewsEntity();
+		int otherhospitalid = Integer.parseInt(request.getParameter("otherhospitalid"));
+		int comment = Integer.parseInt(request.getParameter("comment"));  //1代表新闻、2代表用户评论
+		news.setComment(comment);
+		news.setOtherhospitalid(otherhospitalid); //其他医院id
+		UserEntity  user = (UserEntity)request.getSession().getAttribute("User");
+		HospitalInfo  hospital = (HospitalInfo)request.getSession().getAttribute("hospital");
+		Integer page = Integer.parseInt(request.getParameter("page").toString());
+		news.setHospitalid(hospital.getId());
+		int count = otherHospitalService.getnewscount(news); //得到数量
+		int totalpage = 0;
+		if(count%10==0){
+			totalpage = count/10;
+		}else{
+			totalpage = count/10+1;
+		}
+		if(page>=totalpage){
+			totalpage = page;
+		}
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("start", (page-1)*10);
+		map.put("hospitalid", hospital.getId());
+		map.put("otherhospitalid", otherhospitalid);
+		map.put("comment", comment);
+		map.put("userid",user.getId());
+		List<Map<String,Object>> list = otherHospitalService.getOthernewsList(map);
+		mv.addObject("list", list);
+		mv.addObject("count",count);
+		mv.addObject("comment", comment);
+		mv.addObject("totalPage", totalpage);
+		mv.addObject("page", page);
+		mv.addObject("hospitalid", otherhospitalid);
+		mv.setViewName("otherhospital");
+		return mv;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}

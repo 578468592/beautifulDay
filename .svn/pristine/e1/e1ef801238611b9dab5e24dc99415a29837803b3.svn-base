@@ -1,0 +1,115 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!doctype html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+
+    <title>沧州市中心医院管理系统</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/authentication.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/color_skins.css">
+</head>
+
+<body class="theme-cyan authentication sidebar-collapse">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
+    <div class="container">        
+        <div class="navbar-translate n_logo">
+            <a class="navbar-brand" href="#" title="" target="_blank"></a>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse">
+            
+        </div>
+    </div>
+</nav>
+<!-- End Navbar -->
+<div class="page-header">
+    <div class="page-header-image" style="background-image:url(assets/images/x.jpg)"></div>
+    <div class="container">
+        <div class="col-md-12 content-center">
+            <div class="card-plain">
+                <form class="form" method="" action="" style=" width: 350px; ">
+                    <div class="header">
+                        <div class="logo-container" style=" width: 120px; ">
+                            <img src="${pageContext.request.contextPath }/assets/images/0.png" alt="">
+                        </div>
+                        <h4>沧州市中心医院舆情监测系统</h5>
+												
+                    </div>
+                    <div class="content">                                                
+                        <div class="input-group input-lg">
+                            <input type="text" class="form-control" placeholder="用户名">
+                            <span class="input-group-addon">
+                                <i class="zmdi zmdi-account-circle"></i>
+                            </span>
+                        </div>
+                        <div class="input-group input-lg">
+                            <input type="password" placeholder="密码" class="form-control" />
+                            <span class="input-group-addon">
+                                <i class="zmdi zmdi-lock"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="footer text-center">
+                        <a href="/xtyl-web" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">登陆</a>
+                        <h6 class="m-t-20"><a href="forgot-password.html" class="link"></a></h6>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <nav>
+                
+            </nav>
+            <div class="copyright">
+                &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>,
+                <span>Designed by <a href="#" target="_blank">星图医疗科技</a></span>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Jquery Core Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/libscripts.bundle.js"></script>
+<script src="${pageContext.request.contextPath }/assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+<script>
+	$(".btn").on('click',function(){
+		
+		
+		if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "index";
+} else {
+    window.location.href = "method";
+}
+		
+		
+		
+	})
+	
+	
+	
+</script>
+
+

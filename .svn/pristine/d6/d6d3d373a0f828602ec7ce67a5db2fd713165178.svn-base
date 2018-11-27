@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="api.stonedt.com.dao.HospitalnewsDao"> 
+<!-- 查询总数 -->
+ <select id="getallidentification" parameterType="java.util.Map" resultType="java.lang.Integer">
+SELECT COUNT(1)FROM hospitalnews 
+where 1=1
+ <if test="comment !=null">
+      and comment = #{comment}
+    </if> 
+    <if test="hospitalid !=null">
+      and hospitalid = #{hospitalid}
+    </if>
+    <if test="kind !=null">
+      and kind =#{kind}
+    </if>
+ <if test="emotion != null">
+ and emotion= #{emotion}
+ </if>		
+	
+</select>
+<!-- 查询网络舆情数据-->
+<select id="getallyuqing" parameterType="java.util.Map" resultType="java.util.Map">
+SELECT title,originweb,`date`,`text`
+FROM hospitalnews 
+	WHERE `comment`=1 AND kind=5
+	<if test="hospitalid !=null">
+      and hospitalid = #{hospitalid}
+    </if>
+    
+    <if test="kind != 5">
+ and emotion= #{kind}
+ </if>		
+	ORDER BY date desc
+	<if test="selectPage != null">
+      limit  #{start},10
+		</if>	
+</select>
+
+<select id="getalltitle" parameterType="java.util.Map" resultType="java.lang.Integer" >
+SELECT COUNT(1) FROM hospitalnews where 1=1
+<if test="comment !=null">
+      and comment = #{comment}
+    </if> 
+    <if test="hospitalid !=null">
+      and hospitalid = #{hospitalid}
+    </if>
+    <if test="kind !=null">
+      and kind =#{kind}
+    </if>
+ <if test="emotion != null">
+ and emotion= #{emotion}
+ </if>		
+	ORDER BY date desc
+</select>	
+	
+
+<select id="getallcomment" parameterType="java.util.Map" resultType="java.util.Map">   
+  SELECT
+	    ho.*,IFNULL(co.id,0) AS flag
+FROM  hospitalnews ho
+      LEFT JOIN collection co ON (
+	    ho.id = co.newsid
+	    AND co.userid = #{userid}
+)
+WHERE `comment`= 2
+ <if test="kind !=null">
+      and kind =#{kind}
+    </if>
+	ORDER BY date desc
+	<if test="selectPage != null">
+      limit  #{start},10
+		</if>	
+</select> 
+
+
+
+
+
+
+</mapper> 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="api.stonedt.com.dao.DoctorinfoDao"> 
+<select id="getallleader" parameterType="int" resultType="api.stonedt.com.entity.Doctorinfo">
+ SELECT d.* FROM doctorinfo d 
+             WHERE `type`=1 AND hospitalid = #{hospitalid} 
+</select>
+<select id="getallspecialist" parameterType="int" resultType="api.stonedt.com.entity.Doctorinfo">
+SELECT d.* FROM doctorinfo d 
+             WHERE `type`=2 AND hospitalid = #{hospitalid} 
+</select>
+
+
+</mapper> 

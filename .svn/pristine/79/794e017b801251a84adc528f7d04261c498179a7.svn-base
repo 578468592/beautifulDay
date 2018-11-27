@@ -1,0 +1,196 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+<title>${hospital.hospitalname }</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.min.css">
+<!-- Custom Css -->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/main.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/blog.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/color_skins.css">
+<style type="text/css">
+
+#wrap {
+	width: 100;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+}
+#wrap .logGet {
+	height: 408px;
+	width: 368px;  
+	top: 20%;
+	right: 15%;
+}
+.logC button {
+	width: 100%;
+	height: 45px;
+	background-color: #66ccff;
+	border: none;
+	color: white;
+	font-size: 18px;
+}
+.logGet .logD.logDtip .p1 {
+	display: inline-block;
+	font-size: 28px;
+	margin-top: 30px;
+	width: 86%;
+}
+#wrap .logGet .logD.logDtip {
+	width: 86%;
+	border-bottom: 1px solid #66ccff;
+	margin-bottom: 60px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.logGet .lgD input {
+	width: 100%;
+	height: 42px;
+	text-indent: 2.5rem;
+}
+#wrap .logGet .lgD {
+	width: 86%;
+	position: relative;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#wrap .logGet .logC {
+	width: 86%;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+</style>
+</head>
+<body class="theme-cyan">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="${pageContext.request.contextPath }/${hospital.logo}" width="48" height="48" alt="Compass"></div>
+        <p>正在加载数据,请稍后</p>
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Top Bar -->
+<div id = "top"></div>
+
+<!-- Left Sidebar -->
+<div id = "left"></div>
+
+<!-- Right Sidebar -->
+
+<!-- Main Content -->
+<section class="content home">
+			<div class="wrap" id="wrap">
+				<div class="logGet">
+						<!-- 头部提示信息 -->
+						<div class="logD logDtip">
+							<p class="p1">密码修改</p>
+						</div>
+						<!-- 输入框 -->
+						<div class="lgD">
+							<input id="pwd1" type="password" name="pwd1" placeholder="输入新密码" />
+							<span id="pass1"></span>
+						</div>
+						<div class="lgD">
+						
+							<input id="pwd2" type="password" name="pwd2" placeholder="确认新密码" />
+							<span id="pass2"></span>
+							
+						</div>
+						<div class="logC">
+							<button onclick="judge()" >修改</button>
+						</div>
+						
+					</div>
+			</div>	
+    </div>
+</section>
+<!-- Jquery Core Js --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/morrisscripts.bundle.js"></script><!-- Morris Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/knob.bundle.js"></script> <!-- Jquery Knob Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/countTo.bundle.js"></script> <!-- Jquery CountTo Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/mainscripts.bundle.js"></script>
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#left').load('${pageContext.request.contextPath }/left');
+		$('#top').load('${pageContext.request.contextPath }/top');
+	});
+
+	setTimeout(function () {
+		$(document).ready(function () {
+			$("#passwordedit").attr("class","open active");
+	});
+	},100);	
+	function judge(){
+	
+	var pw1 = document.getElementById("pwd1").value;
+	var pw2 = document.getElementById("pwd2").value;
+	if(pw1==null||pw1==""){
+		document.getElementById("pass1").innerHTML="请输入新密码";
+	}else{
+		document.getElementById("pass1").innerHTML="";
+	}
+	if(pw2==null||pw2==""){
+		document.getElementById("pass2").innerHTML="请再次确认新密码";
+	}else{
+		document.getElementById("pass2").innerHTML="";
+	}
+	if(pw1!==pw2){
+		document.getElementById("pass1").innerHTML="";
+		document.getElementById("pass2").innerHTML="两次输入密码不一致请重新输入";
+	}else{
+		document.getElementById("pass1").innerHTML="";
+		document.getElementById("pass2").innerHTML="";
+	}
+	 
+	$.ajax({
+		 type :"POST",
+		 url : '<%=basePath%>'+"userlogin/modifyPassword",
+		
+		 dataType : "json",
+		 
+		 data:{
+			
+			"pwd1":pw1,
+			"pwd2":pw2
+		 },
+		
+		 success:function(map){
+			alert(map.message);
+			
+		 }
+	})
+    
+	}
+	
+	
+	
+</script>
+</html>
+
+

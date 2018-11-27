@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="api.stonedt.com.dao.FrontierTechnologyDao"> 
+<select id="getcount" resultType="int">
+   select count(1) from frontiertechnology
+</select>
+<select id="getList" parameterType="map" resultType="api.stonedt.com.entity.FrontierTechnology">
+    select * from frontiertechnology limit #{start},10
+</select>
+</mapper> 

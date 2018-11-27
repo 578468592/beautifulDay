@@ -1,0 +1,9 @@
+package api.stonedt.com.dao;
+
+import api.stonedt.com.entity.Collection;
+
+public interface CollectionDao {
+
+	int insertOne(Collection collection);
+
+}

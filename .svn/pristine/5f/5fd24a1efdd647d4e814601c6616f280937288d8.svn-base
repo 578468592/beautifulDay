@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="api.stonedt.com.dao.DoctorinfoDao"> 
+<resultMap type="api.stonedt.com.entity.Doctorinfo" id="querylist">
+      <id property="id" column="id" />
+		<result property="doctorname" column="doctorname" />
+		<result property="positionaltitles" column="positionaltitles" />
+		<result property="office" column="office" />
+		<result property="newsnum" column="newsnum" />
+		<result property="updatetime" column="updatetime" />
+		<result property="type" column="type" />
+		<result property="img" column="img" />
+		<result property="hospitalid" column="hospitalid" />
+		<result property="doctorintroduction" column="doctorintroduction" />		
+		<collection property="Hospitalnewslist" ofType="api.stonedt.com.entity.Hospitalnews">
+		    <id property="id" column="id" />
+			<result property="identification" column="identification"/>
+			<result property="content" column="content"/>
+			<result property="text" column="text"/>
+			<result property="weburl" column="weburl"/>
+			<result property="date" column="date"/>
+			<result property="title" column="title"/>
+			<result property="keyword" column="keyword"/>
+			<result property="hospitalid" column="hospitalid"/>
+			<result property="emotion" column="emotion"/>
+			<result property="kind" column="kind"/>
+			<result property="originweb" column="originweb"/>
+			<result property="abstractcontent" column="abstractcontent"/>
+			<result property="otherhospitalid" column="otherhospitalid"/>
+			<result property="comment" column="comment"/>
+			<result property="doctorid" column="doctorid"/>
+			<result property="type" column="type"/>
+		</collection>
+</resultMap>
+
+<select id="getallleader" parameterType="int" resultType="api.stonedt.com.entity.Doctorinfo">
+ SELECT d.* FROM doctorinfo d 
+             WHERE `type`=1 AND hospitalid = #{hospitalid} 
+</select>
+<select id="getallleader1" parameterType="int" resultType="api.stonedt.com.entity.Doctorinfo" >
+ SELECT d.* FROM doctorinfo d WHERE d.`id`= #{id}   
+</select>
+
+
+<select id="getallspecialist" parameterType="int" resultType="api.stonedt.com.entity.Doctorinfo">
+SELECT d.* FROM doctorinfo d 
+             WHERE `type`=2 AND hospitalid = #{hospitalid} 
+</select>
+<select id="queryleader" parameterType="java.util.Map" resultType="java.util.Map">
+SELECT h.* FROM hospitalnews h  WHERE
+    h.hospitalid= #{hospitalid} 
+ <if test="doctorid != null">
+   AND h.doctorid = #{doctorid} 
+   </if>
+  <if test="type != null">
+   AND  h.type= #{type}
+  </if>
+  
+  ORDER BY date desc
+      limit  #{start},10
+</select>
+<select id="getallnews" parameterType="java.util.Map" resultType="java.lang.Integer"> 
+ SELECT COUNT(1)  FROM  hospitalnews 
+ WHERE `comment`=1 
+  <if test="doctorid != null">
+   AND  doctorid=#{doctorid}
+  </if>
+  <if test="type != null">
+   AND  `type`=#{type}
+  </if>  
+                     
+</select>
+
+</mapper> 

@@ -1,0 +1,245 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+<title>沧州市中心医院</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.min.css">
+<!-- Custom Css -->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/main.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/blog.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/color_skins.css">
+</head>
+<body class="theme-cyan">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="${pageContext.request.contextPath }/assets/photos/czzxyy.jpeg" width="48" height="48" alt="Compass"></div>
+        <p>正在加载数据,请稍后</p>
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Top Bar -->
+<div id = "top"></div>
+
+<!-- Left Sidebar -->
+
+<div id = "left"></div>
+
+<!-- Right Sidebar -->
+
+<!-- Main Content -->
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>情报细分
+                </h2>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-fluid">       
+            <div class="row clearfix">
+                
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <ul class="nav nav-tabs">
+                                                         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dxgz">党性工作主题</a></li>
+														<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ffcl">反腐倡廉主题</a></li>
+                                                         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ylfw">医疗服务主题</a></li>
+														<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#yxyj">医学研究主题</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane blog-page active" id="dxgz">
+                            <div class="card single_post">
+                            		<div class="body">
+                            				<h6 class="m-t-0"><a href="http://www.cz96120.com/Article/ShowArticle.asp?ArticleID=3484" target="_blank" style=" font-size: large; ">我院多种形式收听收看纪念马克思诞辰200周年大会</a></h6>
+                            				<p style=" font-size: smaller; ">来源：<a href="http://www.cz96120.com/Article/ShowArticle.asp?ArticleID=3484" target="_blank">沧州中心医院官网</a> 时间：<a href="#">2018-5-31 17:33:56<a></p>
+                            				<p>5月4日上午10时，纪念马克思诞辰200周年大会在北京人民大会堂隆重召开。我院党委高度重视，积极部署，以党委中心组（扩大）学习、职能处室学习、职工自发学习等多种形式，收听收看大会实况。　</p>
+                            				<div class="row">
+                            				</div>
+                            		</div>
+                            </div>
+                            <div class="card single_post">
+                            		<div class="body">
+                            				<h6 class="m-t-0"><a href="javascript:void(0);">我院召开五四总结表彰暨“青年大学习”活动动员大会</a></h6>
+                            				<p style=" font-size: smaller; ">来源：<a href="http://www.cz96120.com/Article/ShowArticle.asp?ArticleID=3483" target="_blank">沧州中心医院官网</a> 时间：<a href="#">2018-5-31 17:30:20<a></p>
+                            				<p>5月3日，院团委在行政楼10楼大会议室召开五四总结表彰暨“青年大学习”活动动员大会。获得表彰的先进集体和个人、团干部、适龄离团团员、青年志愿者和团员青年代表参加会议。党委副书记、副院长白锡波，各党总支书记和党办室负责人出席会议，党委副书记、副院长白锡波作重要讲话。团委副书记黄彬主持了会议。</p>
+                            				<!--<ul class="meta">
+                            						<li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                            						<li><a href="#"><i class="zmdi zmdi-label col-red"></i>Photography</a></li>
+                            						<li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                            				</ul>
+                            				<a href="javascript:void(0);"></a>
+                            				<div class="row">
+                            						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"><img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                            						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                            						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"> </a> </div>
+                            				</div>-->
+                            		</div>
+                            </div>          
+                        </div>
+                        <div role="tabpanel" class="tab-pane blog-page" id="ffcl">
+                            <div class="card single_post">
+                            		<div class="body">
+                            				<h6 class="m-t-0"><a href="http://www.cz96120.com/Article/ShowArticle.asp?ArticleID=3399" target="_blank" style=" font-size: large; ">加强党风廉政建设 全力打造阳光医院</a></h6>
+                            				<p style=" font-size: smaller; ">来源：<a href="http://www.cz96120.com/Article/ShowArticle.asp?ArticleID=3399">沧州中心医院官网 </a> 时间：<a href="#">2018-4-8 10:44:05<a></p>
+                            				<p>党的十八大以来，党风廉政建设成为全面从严治党的重要内容。院党委着眼于医改新形势，认真落实两个责任，在加强党风廉政建设全力打造阳光医院方面狠下功夫，取得卓越成效。</p>
+                            				<div class="row">
+                            						
+                            				</div>
+                            		</div>
+                            </div>
+                            <!--<div class="card single_post">
+                            		<div class="body">
+                            				<h6 class="m-t-0"><a href="javascript:void(0);">河北邯郸武安市第一人民医院院长郝保乾高调奢华嫁女获利百万…</a></h6>
+                            				<p>据知情人透露，2012年春节假期过后，经郝保乾指示，医院领导们上班后第一件事，不是研究医院工作，而是开会研究郝保乾女儿婚嫁的事宜。他们在医院中层干部周例会上研究讨论通过：医院职工要全力以赴准备院长女儿的婚礼，保证婚礼的高调奢华，强制要求本院至少要有百分之五十以上的职工参加郝保乾女儿的婚礼现场，郝保乾通过女儿的婚嫁大肆收取高额礼金，收入达近百万元，酒席一百多桌。</p>
+                            				<ul class="meta">
+                            						<li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                            						<li><a href="#"><i class="zmdi zmdi-label col-red"></i>Photography</a></li>
+                            						<li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                            				</ul>
+                            				<a href="javascript:void(0);"></a>
+                            				<div class="row">
+                            						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"><img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                            						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                            						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"> </a> </div>
+                            				</div>
+                            		</div>
+                            </div>-->
+                        </div>
+                        <div role="tabpanel" class="tab-pane blog-page" id="ylfw">
+                           <div class="card single_post">
+                           		<div class="body">
+                           				<h6 class="m-t-0"><a href="http://report.hebei.com.cn/system/2017/04/13/018041968.shtml" target="_blank" style=" font-size: large; ">沧州市开展中心医院“医疗助脱贫”义诊活动</a></h6>
+                           				<p style=" font-size: smaller; ">来源：<a href="http://report.hebei.com.cn/system/2017/04/13/018041968.shtml" target="_blank">长城网</a> 时间：<a href="#">2017年04月13日 14:44<a></p>
+                           				<p>近日,中捷团委联合沧州市中心医院团委组织中心医院心内科、神经内科、消化内科、骨科等8个科室专家一行10余人</p>
+                           				<div class="row">
+                           						
+                           				</div>
+                           		</div>
+                           </div>
+                           <div class="card single_post">
+                           		<div class="body">
+                           				<h6 class="m-t-0"><a href="javascript:void(0);">博施仁爱 善行天下 沧州市中心医院倾力开展医疗扶贫活动</a></h6>
+                           				<p style=" font-size: smaller; ">来源：<a href="http://report.hebei.com.cn/system/2017/04/13/018041968.shtml" target="_blank">河北新闻网</a> 时间：<a href="#">2016年10月28日 09:04<a></p>
+                           				<p>15年来,沧州市中心医院就是在大力实施医疗扶贫中,救助贫弱、送医下乡、技术帮扶、爱心义诊,在灾难中挺身、在城乡间奔波,弘扬并践行着“敬佑生命</p>
+                           				<!--<ul class="meta">
+                           						<li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                           						<li><a href="#"><i class="zmdi zmdi-label col-red"></i>Photography</a></li>
+                           						<li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                           				</ul>
+                           				<a href="javascript:void(0);"></a>
+                           				<div class="row">
+                           						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"><img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                           						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                           						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"> </a> </div>
+                           				</div>-->
+                           		</div>
+                           </div>
+                           <div class="card single_post">
+                           		<div class="body">
+                           				<h6 class="m-t-0"><a href="http://news.eastday.com/eastday/13news/auto/news/china/20160511/u7ai5628619.html">沧州市中心医院精准医疗扶贫</a></h6>
+                           				<p style=" font-size: smaller; ">来源：<a href="http://news.eastday.com/eastday/13news/auto/news/china/20160511/u7ai5628619.html" target="_blank">东方网</a> 时间：<a href="#">2016年05月11日 15:04<a></p>
+                           				<p>5月6日下午,“善行沧州,爱进乡村”医疗扶贫行动在沧州市中心医院启动。这一长效精准扶贫行动主要面向县乡村基层医疗卫生机构和农村群众,4000余医护人员即日起将分批</p>
+                           				<!--<ul class="meta">
+                           						<li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+                           						<li><a href="#"><i class="zmdi zmdi-label col-red"></i>Photography</a></li>
+                           						<li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+                           				</ul>
+                           				<a href="javascript:void(0);"></a>
+                           				<div class="row">
+                           						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"><img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                           						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+                           						<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"> </a> </div>
+                           				</div>-->
+                           		</div>
+                           </div>
+                           
+                           
+                        </div>
+												<div role="tabpanel" class="tab-pane blog-page" id="yxyj">
+													<div class="card single_post">
+															<div class="body">
+																	<h6 class="m-t-0"><a href="http://www.cz96120.com/Article/ShowArticle.asp?ArticleID=3440" target="_blank" style=" font-size: large; ">我院获全国“卒中健康管理师”培训资格</a></h6>
+																	<p style=" font-size: smaller; ">来源：<a href="http://www.cz96120.com/Article/ShowArticle.asp?ArticleID=3440">沧州中心医院官网 </a> 时间：<a href="#">2018-4-27 9:54:33<a></p>
+																	<p>3月27日，沧州市首个卒中健康管理师培训班在我院脑科院区隆重开班！我院副院长贾汝福、护理部主任尹桂梅、脑科院区党支部书记范金环、神经内二科主任张俊玲、护理部副主任赵晓宇和马洪霞以及25名首批脑卒中健康管理师和来自各地近百名护理人员参加了开班仪式，尹桂梅担任大会主持。</p>
+																	<div class="row">
+																			
+																	</div>
+															</div>
+													</div>
+													<div class="card single_post">
+															<div class="body">
+																	<h6 class="m-t-0"><a href="javascript:void(0);" target="_blank" style=" font-size: large; ">无创检查擒“真凶” 疑难心脏病现原形</a></h6>
+																	<p style=" font-size: smaller; ">来源：<a href="http://www.cz96120.com/Article/ShowArticle.asp?ArticleID=2925">沧州中心医院官网 </a> 时间：<a href="#">2017-5-4 11:15:50<a></p>
+																	<p>近日，心血管内一科联合神经内科、CT诊断科、核医学科、导管室多学科应用CT—FFR检查技术联合协同诊断及治疗一例心脏病患者。据悉，该项技术目前国内仅北京安贞医院、中日友好医院少量开展，我院为国内第三家开展此检查项目的医院。</p>
+																	<div class="row">
+																			
+																	</div>
+															</div>
+													</div>
+													<!--<div class="card single_post">
+															<div class="body">
+																	<h6 class="m-t-0"><a href="javascript:void(0);">河北邯郸武安市第一人民医院院长郝保乾高调奢华嫁女获利百万…</a></h6>
+																	<p>据知情人透露，2012年春节假期过后，经郝保乾指示，医院领导们上班后第一件事，不是研究医院工作，而是开会研究郝保乾女儿婚嫁的事宜。他们在医院中层干部周例会上研究讨论通过：医院职工要全力以赴准备院长女儿的婚礼，保证婚礼的高调奢华，强制要求本院至少要有百分之五十以上的职工参加郝保乾女儿的婚礼现场，郝保乾通过女儿的婚嫁大肆收取高额礼金，收入达近百万元，酒席一百多桌。</p>
+																	<ul class="meta">
+																			<li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: John Smith</a></li>
+																			<li><a href="#"><i class="zmdi zmdi-label col-red"></i>Photography</a></li>
+																			<li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>Comments: 3</a></li>
+																	</ul>
+																	<a href="javascript:void(0);"></a>
+																	<div class="row">
+																			<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"><img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+																			<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
+																			<div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="http://www.xinhuanet.com/2018-06/19/1123005983_15294194179211n.jpg" alt="" class="img-fluid img-thumbnail"> </a> </div>
+																	</div>
+															</div>
+													</div>-->
+												</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- Jquery Core Js --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/morrisscripts.bundle.js"></script><!-- Morris Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/knob.bundle.js"></script> <!-- Jquery Knob Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/countTo.bundle.js"></script> <!-- Jquery CountTo Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/mainscripts.bundle.js"></script>
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#left').load('${pageContext.request.contextPath }/left');
+		$('#top').load('${pageContext.request.contextPath }/top');
+	});
+
+	setTimeout(function () {
+		$(document).ready(function () {
+			$("#subject").attr("class","open active");
+	});
+	},100);
+	
+</script>
+</html>
+
+

@@ -1,0 +1,218 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> 
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+<title>${hospital.hospitalname}</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.min.css">
+<!-- Custom Css -->
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/main.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/blog.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/color_skins.css">
+<script src="doctors.js"></script>
+</head>
+<body class="theme-cyan">
+
+
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="${pageContext.request.contextPath }/${hospital.logo}" width="48" height="48" alt="Compass"></div>
+        <p>正在加载数据,请稍后</p>
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Top Bar -->
+<div id = "top"></div>
+
+<!-- Left Sidebar -->
+
+<div id = "left"></div>
+
+<!-- Right Sidebar -->
+
+<!-- Main Content -->
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>领导关注 </h2>
+            </div>
+            <!--<div class="col-lg-5 col-md-6 col-sm-12">                
+                <button class="btn btn-primary btn-icon btn-round hidden-sm-down float-right m-l-10" type="button">
+                    <i class="zmdi zmdi-plus"></i>
+                </button>
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="index3.html"><i class="zmdi zmdi-home"></i> Compass</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ul>                
+            </div>-->
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+					<div class="card">
+							<div class="body">
+									<p style=" font-size: large; color: #43b0ff; ">党委班子</p>
+									<div class="table-responsive table_middel">
+											<table class="table m-b-0">
+													<thead>
+															<tr>
+																	
+																	<th>姓名</th>
+																	<th>职称</th>
+																	<th>收集信息数量</th>
+																	<th>更新时间</th>
+																	<th>查看详情</th>
+															</tr>
+													</thead>
+													<tbody>
+												  <c:forEach items="${list}" var="list">
+													  <tr>
+																	
+																	<td><%-- <img src="${list.img}" class="rounded-circle width30 m-r-15" alt="profile-image"> --%><span>${list.doctorname}</span></td>
+																	<td><span class="text-info">${list.positionaltitles}</span></td>
+																	<td>${list.newsnum}</td>
+																	<td><fmt:formatDate type="date" value="${list.updatetime}" dateStyle="default"/></td>
+																	<td><span class="badge badge-warning"><a href="${pageContext.request.contextPath }/Doctorinfo/queryleader?id=${list.id}&type=1&page=1">详情</a></span></td>
+															</tr>
+													  </c:forEach>
+													
+															 <%-- <tr>
+																	<td>1</td>
+																	<td><img src="${pageContext.request.contextPath }/assets/images/avatar3.jpg" class="rounded-circle width30 m-r-15" alt="profile-image"><span>温秀玲</span></td>
+																	<td><span class="text-info">党委书记、院长</span></td>
+																	<td>4</td>
+																	<td>2018.06.25</td>
+																	<td><span class="badge badge-warning"><a href="profile_wxl">详情</a></span></td>
+															</tr>
+															<tr>
+																	<td>2</td>
+																	<td><img src="${pageContext.request.contextPath }/assets/images/avatar3.jpg" class="rounded-circle width30 m-r-15" alt="profile-image"><span>白锡波</span></td>
+																	<td><span class="text-info">党委副书记、副院长</span></td>
+																	<td>3</td>
+																	<td>2018.06.25</td>
+																	<td><span class="badge badge-warning"><a href="#">详情</a></span></td>
+															</tr>  --%>
+															
+													</tbody>
+											</table>
+									</div>                            
+							</div>
+					</div>
+					
+					
+            <div class="card">
+            		<div class="body">
+            				<p style=" font-size: large; color: #43b0ff; ">专家</p>
+            				<div class="table-responsive table_middel">
+            						<table class="table m-b-0">
+            								<thead>
+            										<tr>
+            												
+            												<th>姓名</th>
+            												<th>职称</th>
+																		<th>科室</th>
+            												<th>收集信息数量</th>
+            												<th>更新时间</th>
+            												<th>查看详情</th>
+            										</tr>
+            								</thead>
+            								<tbody>
+            										 <c:forEach items="${list2}" var="list">
+													  <tr>
+																		
+																		<td><%-- <img src="${list.img}" class="rounded-circle width30 m-r-15" alt="profile-image"> --%><span>${list.doctorname}</span></td>
+																		<td><span class="text-info">${list.positionaltitles}</span></td>
+																		<td>${list.office}</td>
+																		<td>${list.newsnum}</td>
+																		<td><fmt:formatDate type="date" value="${list.updatetime}" dateStyle="default"/></td>
+																		<td><span class="badge badge-warning"><a href="${pageContext.request.contextPath }/Doctorinfo/queryleader?id=${list.id}&type=2&page=1">详情</a></span></td>
+																</tr>
+													  </c:forEach>
+																<%-- <tr>
+																		<td>2</td>
+																		<td><img src="${pageContext.request.contextPath }/assets/images/avatar3.jpg" class="rounded-circle width30 m-r-15" alt="profile-image"><span>王光亚</span></td>
+																		<td><span class="text-info">住院医师/副教授</span></td>
+																		<td>心血管内科</td>
+																		<td>5</td>
+																		<td>2018.06.25</td>
+																		<td><span class="badge badge-warning"><a href="#">详情</a></span></td>
+																</tr>
+															<tr>
+																		<td>2</td>
+																		<td><img src="${pageContext.request.contextPath }/assets/images/avatar3.jpg" class="rounded-circle width30 m-r-15" alt="profile-image"><span>胡亚民</span></td>
+																		<td><span class="text-info">副主任医师</span></td>
+																		<td>心血管内科</td>
+																		<td>3</td>
+																		<td>2018.06.25</td>
+																		<td><span class="badge badge-warning"><a href="#">详情</a></span></td>
+																</tr>
+																
+																 --%>
+            										
+            								</tbody>
+            						</table>
+            				</div>                            
+            		</div>
+            </div>
+        </div>        
+    </div>
+</section>
+<!-- Jquery Core Js --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
+<script src="${pageContext.request.contextPath }/assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/morrisscripts.bundle.js"></script><!-- Morris Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/knob.bundle.js"></script> <!-- Jquery Knob Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/countTo.bundle.js"></script> <!-- Jquery CountTo Plugin Js -->
+<script src="${pageContext.request.contextPath }/assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
+
+<script src="${pageContext.request.contextPath }/assets/bundles/mainscripts.bundle.js"></script>
+</body>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#left').load('${pageContext.request.contextPath }/left');
+		$('#top').load('${pageContext.request.contextPath }/top');
+	});
+	$(document).ready(function formatTime(time){
+		var date=new Date(time);
+		return date.getFullYear()+"年"
+		+(date.getMonth()+1 < 10 ?'0'+(date.getMonth()+1) : date.getMonth()+1)+'月'
+		+(date.getDate()<10 ?'0'+(date.getDate()) : date.getDate())+"日"+" "
+		+(date.getHours()<10 ?'0'+(date.getHours()) : date.getHours())+":"
+		+(date.getMinutes()<10?'0'+(date.getMinutes()) : date.getMinutes())+
+		":"+(date.getSeconds()<10?'0'+(date.getSeconds()) : date.getSeconds());
+	});
+
+	setTimeout(function () {
+		$(document).ready(function () {
+			$("#feeling").attr("class","open active");
+			$("#doctors").attr("class","open active");
+	});
+		
+		
+		
+	},100);
+	var date = new Date();
+	var str = date.toLocaleDateString("yyyy-MM-dd");
+	
+</script>
+</html>
+
+

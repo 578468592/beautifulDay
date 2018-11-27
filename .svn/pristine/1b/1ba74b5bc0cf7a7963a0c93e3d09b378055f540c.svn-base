@@ -1,0 +1,9 @@
+package api.stonedt.com.service;
+
+import api.stonedt.com.entity.UserEntity;
+
+public interface UserService {
+
+	UserEntity conUserLogin(UserEntity user);
+  
+}

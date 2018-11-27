@@ -1,0 +1,21 @@
+package api.stonedt.com.service;
+
+import java.util.List;
+import java.util.Map;
+
+import api.stonedt.com.entity.Hospitalnews;
+
+
+
+public interface HospitalnewsService {
+	
+	 //通过用户评论名，获取网络评论条数
+	 public int getallidentification(Hospitalnews Hospitalnews);
+	 //查询所有网络评论
+	public List<Map<String, Object> > getallcomment(Map<String, Object>map);
+	//通过标题获取所有舆情
+	 public int getalltitle(Hospitalnews Hospitalnews);
+	 //获取所有舆情
+	 public List<Map<String, Object> > getallyuqing(Map<String,Object> map);
+	
+}
