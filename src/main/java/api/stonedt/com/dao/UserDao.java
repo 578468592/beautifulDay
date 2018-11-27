@@ -8,10 +8,7 @@ import api.stonedt.com.entity.user;
 @Repository
 public interface UserDao {
 	
-	/*UserEntity conUserLogin(UserEntity user);
-    //更改密码
-	//1.确认账号
-	public UserEntity findUsersByaccount(String account);
+
 	//2.修改密码*/
 	
 	public int update(user user);

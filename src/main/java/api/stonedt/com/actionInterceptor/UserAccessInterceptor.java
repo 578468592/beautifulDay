@@ -39,7 +39,7 @@ public class UserAccessInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
 		// TODO Auto-generated method stub
 		 HttpSession session = request.getSession();
-	    user obj = (user) session.getAttribute("User");
+	    user obj = (user) session.getAttribute("user");
 	      if(null == obj)
 	      {
 	      	  request.getRequestDispatcher("/userlogin/").forward(request, response);

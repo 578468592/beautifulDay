@@ -14,7 +14,7 @@
 		    <div class="col-12">        
 		        <div class="navbar-header">
 		            <a href="#" class="bars"></a>
-		            <a class="navbar-brand" href="#"><img src="${pageContext.request.contextPath }/${hospital.logo}" width="30" alt="Compass"><span class="m-l-10">${hospital.hospitalname }</span></a>
+		            <a class="navbar-brand" href="#"><img <%-- src="${pageContext.request.contextPath }/${hospital.logo}" --%> width="30" alt="Compass"><span class="m-l-10">${user.name }</span></a>
 		        </div>
 		        <ul class="nav navbar-nav navbar-left">
 		            <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>            

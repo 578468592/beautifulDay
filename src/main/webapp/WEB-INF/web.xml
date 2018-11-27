@@ -35,13 +35,9 @@
     <load-on-startup>1</load-on-startup>  
 </servlet>  
 
-
-
-
-
-<servlet-mapping>  
+ <servlet-mapping>  
     <servlet-name>springMvc</servlet-name>  
-    <!-- <url-pattern>*.do</url-pattern>   -->
+    <url-pattern>*.do</url-pattern>  
     <url-pattern>/</url-pattern> 
 </servlet-mapping>  
   <servlet-mapping>
@@ -54,7 +50,7 @@
     	<url-pattern>*.map</url-pattern> 
     	<url-pattern>*.woff2</url-pattern> 
     	
-  </servlet-mapping>
+  </servlet-mapping> 
 <filter>  
     <description>字符集过滤器</description>  
     <filter-name>encodingFilter</filter-name>  

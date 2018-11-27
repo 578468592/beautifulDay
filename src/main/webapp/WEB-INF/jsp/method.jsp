@@ -11,31 +11,32 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
-<title>${hospital.hospitalname}</title>
+<title>中创智能OA管理系统</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
 <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/bootstrap.min.css">
 <!-- Custom Css -->
 <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/main.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/blog.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/color_skins.css">
+
 </head>
 <body class="theme-cyan">
-<!-- Page Loader -->
+
 <div class="page-loader-wrapper">
     <div class="loader">
-        <div class="m-t-30"><img class="zmdi-hc-spin" src="${pageContext.request.contextPath }/${hospital.logo}" width="48" height="48" alt="Compass"></div>
+        <div class="m-t-30"><img class="zmdi-hc-spin" <%-- src="${pageContext.request.contextPath }/${hospital.logo}" --%> width="48" height="48" alt="Compass"></div>
         <p>正在加载数据,请稍后</p>
     </div>
 </div>
 <!-- Overlay For Sidebars -->
-<div class="overlay"></div>
+<!-- <div class="overlay"></div> -->
 
 <!-- Top Bar -->
-<div id = "top"></div>
+<div id ="top"><jsp:include page="top.jsp"></jsp:include></div>
 
 <!-- Left Sidebar -->
 
-<div id = "left"></div>
+<div id ="left"><jsp:include page="left.jsp"></jsp:include></div>
 
 <!-- Right Sidebar -->
 
@@ -84,14 +85,16 @@
 <script src="${pageContext.request.contextPath }/assets/bundles/mainscripts.bundle.js"></script>
 </body>
 <script type="text/javascript">
-	$(document).ready(function () {
-		$('#left').load('${pageContext.request.contextPath }/left');
-		$('#top').load('${pageContext.request.contextPath }/top');
-	});
+
+	 $(document).ready(function () {
+		 $('#left').load('${pageContext.request.contextPath }/left');
+			$('#top').load('${pageContext.request.contextPath }/top');
+	});  
 
 	setTimeout(function () {
 		$(document).ready(function () {
 			$("#method").attr("class","open active");
+			
 	});
 	},100);
 	

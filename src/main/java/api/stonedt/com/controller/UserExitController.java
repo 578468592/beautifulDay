@@ -51,7 +51,7 @@ public class UserExitController {
       public Object modifyPassword(HttpServletRequest request){
 		                
 		  Map<String, Object> map = new HashMap<>();
-			user  User = (user)request.getSession().getAttribute("User");  
+			user  User = (user)request.getSession().getAttribute("user");  
 			            int ids = User.getId();
 		         
 		          String password1 = request.getParameter("pwd1");

@@ -89,10 +89,10 @@
 <div class="overlay"></div>
 
 <!-- Top Bar -->
-<div id = "top"></div>
+<div id = "top"><jsp:include page="top.jsp"></jsp:include></div>
 
 <!-- Left Sidebar -->
-<div id = "left"></div>
+<div id = "left"><jsp:include page="left.jsp"></jsp:include></div>
 
 <!-- Right Sidebar -->
 
