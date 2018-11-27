@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import api.stonedt.com.entity.UserEntity;
+import api.stonedt.com.entity.user;
 import api.stonedt.com.service.UserService;
 
 
@@ -39,7 +39,7 @@ public class UserAccessInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
 		// TODO Auto-generated method stub
 		 HttpSession session = request.getSession();
-	    UserEntity obj = (UserEntity) session.getAttribute("User");
+	    user obj = (user) session.getAttribute("User");
 	      if(null == obj)
 	      {
 	      	  request.getRequestDispatcher("/userlogin/").forward(request, response);

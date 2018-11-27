@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import api.stonedt.com.dao.HospitalDao;
-import api.stonedt.com.entity.UserEntity;
+
+import api.stonedt.com.entity.user;
 import api.stonedt.com.service.UserService;
 /**
  * 用户推出登陆
@@ -24,8 +24,7 @@ import api.stonedt.com.service.UserService;
 @Controller
 @RequestMapping("/userexit")
 public class UserExitController {
-	@Autowired
-	private HospitalDao hospitalDao;	
+	
 	@Autowired
 	private UserService userService;
 	
@@ -52,7 +51,7 @@ public class UserExitController {
       public Object modifyPassword(HttpServletRequest request){
 		                
 		  Map<String, Object> map = new HashMap<>();
-			UserEntity  User = (UserEntity)request.getSession().getAttribute("User");  
+			user  User = (user)request.getSession().getAttribute("User");  
 			            int ids = User.getId();
 		         
 		          String password1 = request.getParameter("pwd1");

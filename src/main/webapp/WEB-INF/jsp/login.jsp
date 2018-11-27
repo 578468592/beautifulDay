@@ -12,7 +12,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
-    <title>医院舆情监测系统</title>
+    <title>中创智能OA管理系统</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Custom Css -->
@@ -47,9 +47,9 @@
             <div class="card-plain" style=" width: 350px; ">
                     <div class="header">
                         <div class="logo-container" style=" width: 120px; ">
-                            <img src="${pageContext.request.contextPath }/assets/images/xtyl.png" alt="">
+                            <img src="${pageContext.request.contextPath}/assets/images/aeft.jpg" alt="阿尔菲特">
                         </div>
-                        <h5>医疗舆情监测系统</h5>
+                        <h5>中创智能OA管理系统</h5>
 												
                     </div>
                     <div class="content">                                                
@@ -83,7 +83,7 @@
                 <script>
                     document.write(new Date().getFullYear())
                 </script>,
-                <span>Designed by <a href="#" target="_blank">星途医疗科技</a></span>
+                <span>Designed by <a href="#" target="_blank">中创智能OA管理系统</a></span>
             </div>
         </div>
     </footer>
@@ -170,7 +170,29 @@
 			alert("密码不能为空");
 			return;
 		}
-		 var data= {account:account,password:password};
+		$.ajax({
+			 type :"POST",
+			 url : '<%=basePath%>'+"userlogin/findUserByaccount",
+			
+			 dataType : "json",
+			 
+			 data:{
+				
+				"account":account,
+				"password":password
+			 },
+			
+			 success:function(map){
+				
+				if(map.message=="登陆成功"){
+					window.location.href = "${pageContext.request.contextPath}/userlogin/method";  
+					 
+				}else{
+					 location.href ='<%=basePath%>'+"/userlogin/";
+				}
+			 }
+		})
+	/* 	 var data= {account:account,password:password};
 		 $.ajax({
 	            type:"POST",
 		        url:"${pageContext.request.contextPath}/userlogin/userconsumerlogin",
@@ -196,7 +218,7 @@
         	alert("账号或者密码错误！");
         }
     }
-});
+}); */
 		 });
 
 
